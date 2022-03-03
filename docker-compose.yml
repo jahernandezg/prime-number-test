@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  docker_prime_numbers_fpay_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker_prime_numbers_fpay_test
+    container_name: docker_prime_numbers_fpay_test
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+
+#correr como: docker-compose -f docker-compose-softram.yml -p ssi_docker_softram up --build -d
